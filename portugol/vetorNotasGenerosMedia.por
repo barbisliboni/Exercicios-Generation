@@ -121,11 +121,6 @@ programa
 
 				caso '3':
 					para(inteiro x = 0; x < 38; x++){
-						/*se(notas[x] >= 8 e notas[x] <= 10 e generos[x] == 'F' ou generos[x] == 'f'){
-							escreva("\n----------------")
-							escreva("\nAPROVADA: ",alunos[x], ", do gênero F, com nota ",notas[x])
-						}
-						*/
 						se((generos[x] == 'F' ou generos[x] == 'f') e notas[x] >=8){
 							escreva("\nAPROVADA: ",alunos[x], ", do gênero F, com nota ",notas[x])
 						}
@@ -180,7 +175,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5646; 
+ * @POSICAO-CURSOR = 4733; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
