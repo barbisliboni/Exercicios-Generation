@@ -38,6 +38,7 @@ public class CalcularIdade{
 	}
 	
 	
+	
 		static int calcular(int idade) {
 		
 			int total;
