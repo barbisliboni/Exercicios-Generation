@@ -4,4 +4,7 @@
 
 **FOR/WHILE/DO.. WHILE:** MediaPopulacao, MultiplicarAteMaiorQueCem, SomaTodosOsNumeros;
 
+**LAÇOS E ARRAYS:** MultiplicarColunasMatriz, IMC, ProdutoCompra;
+
+
 
