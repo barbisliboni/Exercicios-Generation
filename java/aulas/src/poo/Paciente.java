@@ -15,4 +15,8 @@ public class Paciente {
 		this.rg = rg;
 		this.cpf = cpf;
 	}
+	
+	public Paciente() {
+		
+	}
 }
