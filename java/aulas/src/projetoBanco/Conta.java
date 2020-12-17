@@ -4,7 +4,7 @@ public abstract class Conta
 {
 	//ATRIBUTOS
 		private int numeroConta;//tem
-		private double saldo;//tem
+		protected double saldo;//tem
 		private String cpf;//tem
 		
 
@@ -46,7 +46,7 @@ public abstract class Conta
 			if (testarSaldo(valorDebito))  
 			{
 				this.setSaldo(this.getSaldo() - valorDebito);
-				System.out.println("SALDO TOTAL: " + this.getSaldo());
+				System.out.println("SALDO TOTAL: R$ " + this.getSaldo());
 			} 
 			else
 			{
@@ -61,7 +61,7 @@ public abstract class Conta
 		public void credito (double valorCredito) 
 		{
 			this.setSaldo(this.getSaldo() + valorCredito);
-			System.out.println("SALDO TOTAL: " + this.getSaldo());
+			System.out.println("SALDO TOTAL: R$ " + this.getSaldo());
 		}
 		
 		public boolean testarSaldo(double valor) 

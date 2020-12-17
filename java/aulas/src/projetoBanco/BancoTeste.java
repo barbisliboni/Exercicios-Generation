@@ -208,12 +208,19 @@ public class BancoTeste {
 					System.out.println("QUAL O VALOR?");
 					credito = leia.nextDouble();
 					especial.credito(credito);
+					especial.testarSaldo(credito);
+					especial.registraLimite();
+					especial.devolverLimite();
+					
 				}
 				
 				else if(debCred == 2) {
 					System.out.println("QUAL O VALOR?");
 					debito = leia.nextDouble();
 					especial.debito(debito);
+					especial.testarSaldo(debito);
+					especial.registraLimite();
+					especial.devolverLimite();
 				}
 				
 			}	
@@ -221,38 +228,40 @@ public class BancoTeste {
 		//FIM FUNÇÃO 10 MOVIMENTOS ESPECIAL
 		
 		//FUNÇÃO 10 MOVIMENTOS EMPRESA
-				static void movimentacaoEmpresa() {
-					
-					int debCred;
-					double credito = 0, creditoTotal = 0, debito = 0, debitoTotal = 0;
-					Scanner leia = new Scanner(System.in);
-					int numeroConta = 0;
-					
-					System.out.println("Digite o seu CPF:");
-					String cpfConta = leia.next();
-					
-					ContaEmpresa empresa = new ContaEmpresa(numeroConta, 20000);
-					ContaCorrente donoEmpresa = new ContaCorrente(numeroConta, 20);
-					
-					for(int x = 0; x < 10; x++) {
-						System.out.printf("Dia %d \n", x+1);
-						System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
-						System.out.println("QUAL A OPÇÃO DESEJADA?");
-						debCred = leia.nextInt();
-						
-						if(debCred == 1) {
-							System.out.println("QUAL O VALOR?");
-							credito = leia.nextDouble();
-							empresa.credito(credito);
-						}
-						
-						else if(debCred == 2) {
-							System.out.println("QUAL O VALOR?");
-							debito = leia.nextDouble();
-							empresa.debito(debito);
-						}
-					}	
+		static void movimentacaoEmpresa() {
+			
+			int debCred;
+			double credito = 0, debito = 0, saldo=0;
+			Scanner leia = new Scanner(System.in);
+			int numeroConta = 0;
+			
+			System.out.println("Digite o seu CPF:");
+			String cpfConta = leia.next();
+			
+			ContaEmpresa empresa = new ContaEmpresa(numeroConta, 20000);
+			ContaCorrente donoEmpresa = new ContaCorrente(numeroConta, 20);
+			
+			for(int x = 0; x < 10; x++) {
+				System.out.printf("Dia %d \n", x+1);
+				System.out.println("[1] - CRÉDITO\n[2] - DÉBITO");
+				System.out.println("QUAL A OPÇÃO DESEJADA?");
+				debCred = leia.nextInt();
+				
+				if(debCred == 1) {
+					System.out.println("QUAL O VALOR?");
+					credito = leia.nextDouble();
+					empresa.credito(credito);
+					empresa.emprestar(credito);
 				}
+				
+				else if(debCred == 2) {
+					System.out.println("QUAL O VALOR?");
+					debito = leia.nextDouble();
+					empresa.debito(debito);
+					empresa.emprestar(debito);
+				}
+			}	
+		}
 		//FIM FUNÇÃO 10 MOVIMENTOS EMPRESA
 				
 		//FUNÇÃO 10 MOVIMENTOS UNIVERSITARIA
@@ -277,12 +286,14 @@ public class BancoTeste {
 					System.out.println("QUAL O VALOR?");
 					credito = leia.nextDouble();
 					universitaria.credito(credito);	
+					universitaria.emprestar(credito);
 				}
 						
 				else if(debCred == 2) {
 					System.out.println("QUAL O VALOR?");
 					debito = leia.nextDouble();
 					universitaria.debito(debito);
+					universitaria.emprestar(debito);
 				}
 			}
 		}

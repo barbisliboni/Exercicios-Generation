@@ -21,4 +21,16 @@ public class ContaUniversitaria extends Conta{
 		super(numeroConta);
 		this.emprestimoUniversitario = emprestimoUniversitario;
 	}
+	
+	public void emprestar(double valorEmprestimo){
+		if(valorEmprestimo<=this.emprestimoUniversitario){
+			this.emprestimoUniversitario = this.emprestimoUniversitario-valorEmprestimo;
+			this.saldo=this.saldo+valorEmprestimo;
+			System.out.println("RESTANTE DO EMPRÉSTIMO: R$ "+ this.emprestimoUniversitario);
+			System.out.println("SALDO ATUAL: R$ "+this.saldo);
+			System.out.println("\n");
+		}
+		else{
+		}	
+	}
 }
