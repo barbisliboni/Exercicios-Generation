@@ -1,43 +1,86 @@
 package projetoBanco;
 
-public class Conta {
+public abstract class Conta 
+{
+	//ATRIBUTOS
+		private int numeroConta;//tem
+		private double saldo;//tem
+		private String cpf;//tem
+		
 
+		public Conta(int numeroConta) 
+		{
+			this.numeroConta = numeroConta;
+		}
+		
+		//*SOBRECARGA
+		public Conta(int numeroConta, String cpf)
+		{
+			this.numeroConta = numeroConta;
+			this.cpf = cpf;
+		}
 
-	protected int numeroConta;
-	protected String cpf;
-	protected double saldo;
+		public int getNumeroConta() {
+			return numeroConta;
+		}
 
-	public double getSaldo() {
-		return saldo;
-	}
-	
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
-	
-	public Conta(int numeroConta, String cpf, double saldo) {
-		super();
-		this.numeroConta = numeroConta;
-		this.cpf = cpf;
-		this.saldo = saldo;
-	}
-	
-	public Conta(int numeroConta, String cpf) {
-		super();
-		this.numeroConta = numeroConta;
-		this.cpf = cpf;
-	}
-	
-	public Conta(String cpf) {
-		super();
-		this.cpf = cpf;
-	}
-	
-	public Conta(int numeroConta) {
-		super();
-		this.numeroConta = numeroConta;
-	}
-	
+		
+		public double getSaldo() {
+			return saldo;
+		}
+
+		public String getCpf() {
+			return cpf;
+		}
+
+		public void setCpf(String cpf) {
+			this.cpf = cpf;
+		}
+
+		
+		
+		//METODOS PROPRIOS
+		
+		public void debito(double valorDebito) 
+		{
+			if (testarSaldo(valorDebito))  
+			{
+				this.setSaldo(this.getSaldo() - valorDebito);
+				System.out.println("SALDO TOTAL: " + this.getSaldo());
+			} 
+			else
+			{
+				System.out.println("SALDO INDISPONIVEL");
+			}
+			
+			
+		}
+		
+		
+		
+		public void credito (double valorCredito) 
+		{
+			this.setSaldo(this.getSaldo() + valorCredito);
+			System.out.println("SALDO TOTAL: " + this.getSaldo());
+		}
+		
+		public boolean testarSaldo(double valor) 
+		{
+			
+			boolean teste;
+			if (valor <= this.getSaldo()) {
+				teste = true;
+			} else {
+				teste = false;
+			}
+			
+			return teste;
+		}
+		public void setSaldo(double saldo) {
+			this.saldo = saldo;
+		}
+		
+		
 	
 }
 
