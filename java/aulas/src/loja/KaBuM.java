@@ -35,7 +35,7 @@ public class KaBuM {
 	
 			switch (opcao) {
 			case '1':
-				 //System.out.println(sexo(genero));
+				System.out.println(sexo(genero));
 				System.out.println("Continuar [S] [N]?");
 				opcaoContinuar = leia.next().toUpperCase().charAt(0);
 				if(opcaoContinuar == 'N') {
@@ -66,10 +66,9 @@ public class KaBuM {
 	
 					
 					for (int x = 0; x < 10; x++) {
-						String codigoTemp = prodlista.get(x).getCodigo();
-						codigo = "BLG-001";
 						
-						if (codigoTemp == codigo) {
+						if(codigo.equals(prodlista.get(x).getCodigo())){
+ {
 							System.out.println("*Checando o produto...*");
 							System.out.println("Produto escolhido: " + prodlista.get(x).getNomeProduto());
 							
@@ -77,13 +76,16 @@ public class KaBuM {
 							quantidade = leia.nextInt();
 							prodlista.get(quantidade).tiraEstoque(quantidade);
 						}
+ 
+						}
+							
 					}
-
+					
 					Math.round(prodlista.get(quantidade).venda(quantidade));
-
+					break;
 
 					
-					break;
+					
 	
 			case '2':
 				System.out.println("WIP - Work in Progress");
