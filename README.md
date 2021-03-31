@@ -1,4 +1,4 @@
-# Exercícios em Java
+# Exercícios em Java e Portugol
 
 Esse repositório se refere aos exercícios em Java e Portugol desenvolvidos no curso de Desenvolvedor Full Stack Júnior da Generation Brasil!
 
